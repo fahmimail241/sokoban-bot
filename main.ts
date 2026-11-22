@@ -1,7 +1,1 @@
-for(n of(F=require('fs')).readdirSync(I='/input/')){t=F.readFileSync(I+n+'/level.txt');D={d:w=t.indexOf(10)+1,u:-w,l:-1,r:1};p=t.indexOf(64,s='');C=t.map((c,i)=>(c%6||(S[i%w&8|i>p]||=[]).push(i),c%35<8),S=[]);T=e=>b.map(x=>C[x]=e)
-S.map(B=>{for([b,p,s]of Q=[[B,p,s]]){T(2);R={[p]:s};K=[m=p];L=[]
-for(u of K)for(j in D)q=R[u]+j,C[v=u+(d=D[j])]?C[v]>1>C[v+d]&&L.push([b.map(z=>z-v?z:v+d),v,q]):v in R||(R[v]=q,K.push(v),v<m?m=v:0)
-if(b.every(x=>t[x]&2,T(1)))break
-S[C+m]||=Q.push(...L)
-T(0)}})
-F.mkdirSync(O='/output/'+n);F.writeFileSync(O+'/solution.txt',s)}
+for(F=require('fs'),n=6;--n;){t=F.readFileSync(`/input/i00${n}/level.txt`);w=8+t[8]%9;p=t.indexOf(64,s=' ');c=t.map((x,i)=>x%6?x&1:i%w&8|i>p|2);for(r=12;--r;)for([c,p,s]of(S={},Q=[[c,p,s]])){if(c.every((x,i)=>x-r|t[i]&2))break;R={[p]:s};for(u of K=[p])for(d of[w,-w,-1,1])q=R[u]+'ul rd'[d%7+2],c[v=u+d]?c[v]-r|c[e=v+d]|~t[e]>>1&(t[e-w]|t[e+w])&(t[e-1]|t[e+1])&1||(g=Buffer.from(c),g[v]=0,g[e]=r,S[g+v]||=Q.push([g,v,q])):R[v]||=K.push(v)&&q}F.mkdirSync(O='/output/i00'+n);F.writeFileSync(O+'/solution.txt',s)}
